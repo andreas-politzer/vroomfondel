@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react'
 import type { ModulePosition } from './types'
 
-export type ModuleId = 'marvin' | 'eingang' | 'bibliothek' | 'analysis'
+export type ModuleId = 'marvin' | 'eingang' | 'bibliothek' | 'analysis' | 'muelleimer'
 export type Location = { place: 'canvas'; position: ModulePosition } | { place: 'depot' }
 
 const INITIAL_POSITIONS: Record<ModuleId, ModulePosition> = {
@@ -9,6 +9,7 @@ const INITIAL_POSITIONS: Record<ModuleId, ModulePosition> = {
   eingang: { x: 980, y: 140 },
   bibliothek: { x: 640, y: 140 },
   analysis: { x: 1020, y: 460 },
+  muelleimer: { x: 1020, y: 640 },
 }
 
 // Marvin startet auf dem Canvas, alle anderen im Depot — wie besprochen.
@@ -17,6 +18,7 @@ const INITIAL_LOCATIONS: Record<ModuleId, Location> = {
   eingang: { place: 'depot' },
   bibliothek: { place: 'depot' },
   analysis: { place: 'depot' },
+  muelleimer: { place: 'depot' },
 }
 
 export function useModuleLocations() {
